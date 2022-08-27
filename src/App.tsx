@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useState } from "react";
 import "./App.css";
 import CustomPlayerComponent from "./components/custom-player";
 
@@ -44,9 +44,6 @@ function App() {
     },
     [customPlayerElement, elementShadowRoot] //We have to watch these deps because the shadow root state is not set on first render (hooks are async)
   );
-
-  console.log("customPlayerElement", customPlayerElement); //TBI: Remove
-  console.log("elementShadowRoot", elementShadowRoot); //TBI: Remove
 
   const handlePlayPause = () => {
     setIsPlaying(!isPlaying);
